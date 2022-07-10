@@ -1,0 +1,60 @@
+<div class='container '>
+  <h1>{{'Template.AddBook' | translate}}</h1>
+  <form
+    (ngSubmit)='onSubmit()'
+    [formGroup]='addBookForm'
+    class='p-d-flex p-flex-column p-ai-center'>
+    <div class='p-field p-grid'>
+      <label for='title'>{{'Template.Title' | translate}}: </label>
+      <div class='p-col'>
+        <input
+          formControlName='title'
+          id='title'
+          name='title'
+          pInputText
+          type='text'
+          maxlength='100'>
+      </div>
+    </div>
+    <div class='p-field p-grid'>
+      <label for='author'>{{'Template.Author' | translate}}: </label>
+      <div class='p-col'>
+        <input
+          formControlName='author'
+          id='author'
+          name='author'
+          pInputText
+          type='text'
+          maxlength='100'>
+      </div>
+    </div>
+    <div class='p-field p-grid'>
+      <label for='image-url'>{{'Template.ImageUrl' | translate}}: </label>
+      <div class='p-col'>
+        <input
+          formControlName='imageUrl'
+          id='image-url'
+          name='image-url'
+          pInputText
+          type='text'
+          maxlength='1000'>
+      </div>
+    </div>
+    <div class='p-field p-grid p-ai-start'>
+      <label class='p-ver' for='description'>{{'Template.Description' | translate}}: </label>
+      <div class='p-col'>
+        <textarea
+          [cols]='50'
+          [rows]='5'
+          autoResize='autoResize'
+          formControlName='description'
+          id='description'
+          maxlength='1000'
+          name='description'
+          pInputTextarea
+        ></textarea>
+      </div>
+    </div>
+    <button label="{{'Template.Add' | translate}}" pButton type='submit'></button>
+  </form>
+</div>

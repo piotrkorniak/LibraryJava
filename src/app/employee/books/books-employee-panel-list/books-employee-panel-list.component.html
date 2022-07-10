@@ -1,0 +1,34 @@
+<div class='card'>
+  <h1>{{'Template.Books' | translate}}</h1>
+  <p-table [value]='books'>
+    <ng-template pTemplate='header'>
+      <tr>
+        <th>{{'Template.ID' | translate}}</th>
+        <th>{{'Template.Title' | translate}}</th>
+        <th>{{'Template.Author' | translate}}</th>
+        <th>{{'Template.Status' | translate}}</th>
+        <th>{{'Template.Actions' | translate}}</th>
+      </tr>
+    </ng-template>
+    <ng-template let-book pTemplate='body'>
+      <tr>
+        <td>
+          {{book.id}}
+        </td>
+        <td>
+          {{book.title}}
+        </td>
+        <td>
+          {{book.author}}
+        </td>
+        <td>
+          <span [class]="'book-status status-' + book.status">{{'Template.' + book.status | translate}}</span>
+        </td>
+        <td>
+          <button (click)='onDeleteBook(book.id)' class='p-button-danger' pButton pRipple
+            type='button'>{{'Template.DeleteBook' | translate}}</button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

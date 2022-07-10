@@ -1,0 +1,79 @@
+<h1>{{'Template.Authentication.SignUp' | translate}}</h1>
+<form
+  (ngSubmit)='onRegister()'
+  [formGroup]='registerForm'
+  class='p-d-flex p-flex-column p-ai-center'>
+  <div class='p-field p-grid'>
+    <label for='first-name'>
+      {{'Template.Authentication.FirstName' | translate}}:
+    </label>
+    <div class='p-col'>
+      <input
+        formControlName='firstName'
+        id='first-name'
+        name='first-name'
+        pInputText
+        type='text'>
+    </div>
+  </div>
+  <div class='p-field p-grid'>
+    <label for='last-name'>
+      {{'Template.Authentication.LastName' | translate}}:
+    </label>
+    <div class='p-col'>
+      <input
+        formControlName='lastName'
+        id='last-name'
+        name='last-name'
+        pInputText
+        type='text'>
+    </div>
+  </div>
+  <div class='p-field p-grid'>
+    <label for='email'>
+      {{'Template.Authentication.EmailAddress' | translate}}:
+    </label>
+    <div class='p-col'>
+      <input
+        formControlName='email'
+        id='email'
+        name='email'
+        pInputText
+        type='email'>
+    </div>
+  </div>
+  <div formGroupName='passwordGroup'>
+    <div class='p-field p-grid'>
+      <label for='password'>
+        {{'Template.Authentication.Password' | translate}}:
+      </label>
+      <div class='p-col'>
+        <input
+          formControlName='password'
+          id='password'
+          name='password'
+          pInputText
+          type='password'>
+      </div>
+    </div>
+    <div class='p-field p-grid'>
+      <label for='confirm-password'>
+        {{'Template.Authentication.ConfirmPassword' | translate}}:
+      </label>
+      <div class='p-col'>
+        <input
+          formControlName='confirmPassword'
+          id='confirm-password'
+          name='password'
+          pInputText
+          type='password'>
+      </div>
+    </div>
+  </div>
+  <a routerLink='/authentication/login'>
+    {{'Template.Authentication.BackToLogin' | translate}}
+  </a>
+  <button pButton>
+    {{'Template.Authentication.SignUp' | translate}}
+  </button>
+</form>

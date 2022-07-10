@@ -1,0 +1,35 @@
+<ng-container *ngIf='user'>
+  <div>
+    <p-menubar [model]='authorizedUserItems'>
+      <span></span>
+      <form
+        (ngSubmit)='onSearch()'
+        [formGroup]='searchForm'
+        class='search-form'>
+        <input
+          class='search-bar'
+          formControlName='searchValue'
+          id='search'
+          name='search'
+          pInputText
+          placeholder="{{'Template.Header.Search' | translate}}"
+          type='text'>
+      </form>
+      <button
+        (click)='onLogout()'
+        icon='pi pi-power-off'
+        label="{{'Template.Header.Logout' | translate}}"
+        pButton
+        style='margin-left:.25em'
+        type='button'>
+      </button>
+    </p-menubar>
+  </div>
+</ng-container>
+
+<ng-container
+  *ngIf='!user'>
+  <p-menubar
+    [model]='unauthorizedUserItems'>
+  </p-menubar>
+</ng-container>

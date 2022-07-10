@@ -1,0 +1,19 @@
+<div class='p-d-flex p-jc-between'>
+  <img [alt]='currentBook.title' [src]='currentBook.imageUrl'>
+  <div class='p-d-flex p-flex-column p-ai-center' style='width: 30%'>
+    <h1>{{'Template.Title' | translate}}: {{currentBook.title}}</h1>
+    <h3>{{'Template.Author' | translate}}: {{currentBook.author}}</h3>
+    <h3>{{'Template.Status' | translate}}: {{'Template.' + currentBook.status | translate}}</h3>
+    <p-button
+      (click)='onReserveBook()'
+      *ngIf='user.role !== userRoles.Admin'
+      [disabled]='!user || currentBook.status === bookStatus.Unavailable'
+      class='p-button-info'>
+      {{'Template.ReserveBook' | translate}}
+    </p-button>
+  </div>
+  <div style='width: 30%'>
+    <h4>{{'Template.Description' | translate}}:</h4>
+    <p> {{currentBook.description}}</p>
+  </div>
+</div>
